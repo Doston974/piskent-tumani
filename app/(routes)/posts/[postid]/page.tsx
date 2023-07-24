@@ -15,7 +15,7 @@ const page = () => {
 
 
   const { postid }: any = useParams()
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+  const { defaultLayoutPluginInstance }: any = defaultLayoutPlugin();
 
   const useGetPostDetailList = useGetPostDetail({
     id: postid,
@@ -81,7 +81,7 @@ const page = () => {
           ) : (
             ""
           )}
-         
+
 
         </div>
         <p
