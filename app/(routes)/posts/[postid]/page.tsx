@@ -4,10 +4,10 @@ import { useParams } from 'next/navigation'
 import { useGetPostDetail } from "@/hooks/index"
 import { GrView } from 'react-icons/gr'
 import { BiCalendar } from "react-icons/bi"
-// import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-// import { Worker, Viewer } from "@react-pdf-viewer/core";
-// import "@react-pdf-viewer/core/lib/styles/index.css";
-// import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { useViewsPatchMutation } from "@/hooks/index"
 
 
@@ -15,7 +15,7 @@ const page = () => {
 
 
   const { postid }: any = useParams()
-  // const defaultLayoutPluginInstance  = defaultLayoutPlugin();
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   const useGetPostDetailList = useGetPostDetail({
     id: postid,
@@ -69,7 +69,7 @@ const page = () => {
             ""
           )}
 
-          {/* {useGetPostDetailList.data?.post_file ? (
+          {useGetPostDetailList.data?.post_file ? (
             <div className="h-[100vh]">
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
                 <Viewer
@@ -80,7 +80,7 @@ const page = () => {
             </div>
           ) : (
             ""
-          )} */}
+          )}
          
 
         </div>
